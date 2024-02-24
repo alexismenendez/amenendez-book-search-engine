@@ -9,13 +9,17 @@ const typeDefs = `
     }
 
     type Book {
-        _id: ID!
+        bookId: ID!
         authors: [String]
         description: String!
-        bookId: String!
         image: String!
         link: String!
         title: String!
+    }
+
+    type Auth {  
+        token: ID!
+        user: User
     }
 
     type Query {
