@@ -22,6 +22,16 @@ const typeDefs = `
         user: User
     }
 
+
+    input BookData {
+        authors: [String]
+        description: String!
+        bookId: String!
+        image: String!
+        link: String!
+        title: String!
+    }
+
     type Query {
         me: User
     }
@@ -29,7 +39,7 @@ const typeDefs = `
     type Mutation {
         login(email: String!, password: String!: Auth)
         addUser(username: String!, email: String!, password: String!): Auth
-        saveBook(): User
+        saveBook(bookInfo: BookData!): User
         removeBook(bookId: String!): User
     }
 `;
