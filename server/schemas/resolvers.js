@@ -9,7 +9,7 @@ const resolvers = {
 
     Mutations: {
         addUser:
-        Login:
+        login:
         saveBook:
         removeBook:
     }
