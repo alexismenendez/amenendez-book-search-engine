@@ -12,8 +12,8 @@ const typeDefs = `
         bookId: ID!
         authors: [String]
         description: String!
-        image: String!
-        link: String!
+        image: String
+        link: String
         title: String!
     }
 
