@@ -9,7 +9,7 @@ const SignupForm = () => {
   // set initial form state
   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
   // set state for form validation
-  const [validated] = useState(false);
+  const [validated, setValidated] = useState(false);
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
@@ -30,13 +30,15 @@ const SignupForm = () => {
       event.stopPropagation();
     }
 
+    setValidated(true)
+
     try {
-      const user = await addUser({
-        variables: userFormData
+      const response = await addUser({
+        variables: { ...userFormData }
       })
 
-      const token = user.data.addUser.token;
-      console.log(user);
+      const token = response.data.addUser.token;
+      console.log(data);
       Auth.login(token);
     } catch (err) {
       console.error(err);
